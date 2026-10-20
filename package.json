@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@iconify-react/lucide": "gitlab:iconify-icons/react#lucide",
     "next": "16.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0"

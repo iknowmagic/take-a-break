@@ -5,6 +5,7 @@
     "": {
       "name": "cs177-take-a-break",
       "dependencies": {
+        "@iconify-react/lucide": "gitlab:iconify-icons/react#lucide",
         "next": "16.4.2",
         "react": "19.3.0",
         "react-dom": "19.3.0",
@@ -45,6 +46,12 @@
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.4.2", "", { "os": "win32", "cpu": "x64" }, "sha512-9ma7C4g8Sq3cBlRJD2yrsHXB1mnnEBdpy7PhvFrylQWQb4PoyCmPucdX7frvsSBQuFtIiKCrolPl/8tCZrKvgQ=="],
 
     "@emnapi/runtime": ["@emnapi/runtime@1.11.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA=="],
+
+    "@iconify-react/lucide": ["@iconify-react/lucide@git+ssh://gitlab:iconify-icons/react#cb24f26bc558202063a6d3fe9874db249d44baa5", { "dependencies": { "@iconify/css-react": "^1.0.1" } }, "cb24f26bc558202063a6d3fe9874db249d44baa5"],
+
+    "@iconify/css-react": ["@iconify/css-react@1.0.3", "", { "dependencies": { "@iconify/types": "^2.0.0" }, "peerDependencies": { "react": ">=18.0.0" } }, "sha512-gTgZ2x6nxtWskNL7HklfXPu4OY0DQr+nJa89x5p2XvZ3Wtlj10nlKqiD/tP5JFRtCzhh9MBOcf2peNIOZTGmHQ=="],
+
+    "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
     "@img/colour": ["@img/colour@1.1.0", "", {}, "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="],
 

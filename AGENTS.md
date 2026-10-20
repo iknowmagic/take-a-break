@@ -106,14 +106,23 @@ For this app, in particular:
 
 Favor the screenshot's minimalism while preserving state visibility and accessibility. Do not remove important feedback to make the interface look cleaner.
 
-## 9. Quality gate before declaring a task done
+## 9. Responsive design (mandatory)
+
+- Design every new or changed page, component, modal, and interaction **mobile first**. It must remain usable at mobile, tablet, and desktop sizes. Treat `./design/` as desktop visual direction, not fixed dimensions to impose on small screens; a layout that already works needs no forced breakpoint change.
+- Use Tailwind's default breakpoints only: unprefixed utilities for mobile, `md:` at 768px and up for tablet, `lg:` at 1024px and up for desktop, and `sm:` at 640px and up only when a real intermediate layout needs it. Do not define custom breakpoints, author `@media` styling or custom CSS classes, or use viewport-specific magic numbers or arbitrary sizing utilities in JSX.
+- Adapt the layout instead of merely shrinking it. Keep timer digits fully visible, controls separate and reachable, progress within available width, and spacing and text readable. Fit dialogs and settings within the viewport with scrolling when needed; wrap or accessibly truncate long labels. Prevent accidental horizontal page overflow.
+- Keep essential timer actions (pause, resume, skip, reset, and settings) keyboard and touch operable at narrow widths. No essential hover-only actions. Preserve clear phase and running/paused labels, visible focus, WCAG-compliant contrast, usable touch targets, and readable transition feedback or toasts at every width.
+- Use the existing Perfect Fourth typography/spacing tokens, normal Tailwind utilities, and shadcn components. Add centrally named responsive or fluid tokens in `src/app/globals.css` only if a later feature truly needs them; do not introduce tokens or restyle the app in a documentation-only task.
+- For affected UI, inspect rendered behavior around **375px mobile, 768px tablet, and 1280px desktop**, plus intermediate widths near layout transitions when relevant. Check overflow, countdown, controls, dialogs/settings, toasts, keyboard/touch access, focus, and actual rendered contrast. These widths are testing targets, not CSS tokens. Report what was inspected; if rendering or contrast measurement was unavailable, say so rather than claiming verification.
+
+## 10. Quality gate before declaring a task done
 
 1. Confirm the solution uses shadcn where available, approved Lucide icons, and Bun only.
 2. Confirm `components.json` is unchanged.
 3. Check that new code introduces **no custom CSS classes, arbitrary sizing/color utilities, or undocumented design values**.
 4. Confirm `globals.css` contains any new shared tokens and that typography/spacing follow the agreed scale, with explained technical exceptions.
 5. Test interaction states, timer phase changes, keyboard and focus behavior, and meaningful failure/recovery paths.
-6. Inspect rendered desktop and narrower viewport layouts. **Measure contrast in real rendered states**; fix failures.
+6. For any UI change, inspect rendered mobile (~375px), tablet (~768px), and desktop (~1280px) layouts, plus relevant transition widths. Check responsive behavior and accessibility across affected states. **Measure contrast in real rendered states**; fix failures. If rendered inspection or contrast measurement was unavailable, report that limit and do not claim responsive or accessibility verification.
 7. Run the relevant project checks with Bun (for example `bun run lint`, `bun run build`, `bun test` **only when those scripts/tests exist**). Do not claim to have run checks that were not run.
 
 When reporting completed work, state what changed, what was tested, and any unverified limitations concisely.

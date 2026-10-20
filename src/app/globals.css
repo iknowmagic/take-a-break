@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fafb;
+  --foreground: #2a2a2a;
+  --card: #ffffff;
+  --card-foreground: #2a2a2a;
+  --popover: #ffffff;
+  --popover-foreground: #2a2a2a;
+  --muted: #f7fafb;
+  --muted-foreground: #52646f;
+  --secondary: #f7fafb;
+  --secondary-foreground: #2a2a2a;
+  --accent: #f7fafb;
+  --accent-foreground: #005e4a;
+  --primary: #007b61;
+  --primary-foreground: #ffffff;
+  --border: #dee5e7;
+  --input: #85969e;
+  --ring: #5b7786;
+  --timer-work: #2a2a2a;
+  --timer-break: #5c7565;
+  --progress-work: #5b7786;
+  --progress-break: #5c7565;
+  --progress-track: #dee5e7;
+  --accent-control: #008f70;
+  --accent-text: #005e4a;
+}
+
+/* Perfect Fourth type scale: 16px base, each step multiplied by 4/3. */
+/* Perfect Fourth spacing scale: 4px base, each step multiplied by 4/3. */
+@theme {
+  --text-step-minus-1: 0.75rem;
+  --text-step-0: 1rem;
+  --text-step-1: 1.333333rem;
+  --text-step-2: 1.777778rem;
+  --text-step-3: 2.37037rem;
+  --text-step-4: 3.160494rem;
+  --text-step-5: 4.213992rem;
+  --text-step-6: 5.618656rem;
+  --text-step-7: 7.491541rem;
+  --text-step-8: 9.988721rem;
+  --text-step-9: 13.318295rem;
+  --text-step-10: 17.757727rem;
+  --text-step-11: 23.676969rem;
+
+  --spacing-step-0: 0.25rem;
+  --spacing-step-1: 0.333333rem;
+  --spacing-step-2: 0.444444rem;
+  --spacing-step-3: 0.592593rem;
+  --spacing-step-4: 0.790123rem;
+  --spacing-step-5: 1.053498rem;
+  --spacing-step-6: 1.404664rem;
+  --spacing-step-7: 1.872885rem;
+  --spacing-step-8: 2.49718rem;
+  --spacing-step-9: 3.329574rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-timer-work: var(--timer-work);
+  --color-timer-break: var(--timer-break);
+  --color-progress-work: var(--progress-work);
+  --color-progress-break: var(--progress-break);
+  --color-progress-track: var(--progress-track);
+  --color-accent-control: var(--accent-control);
+  --color-accent-text: var(--accent-text);
+  --font-sans: var(--font-inter-next), Arial, Helvetica, sans-serif;
+  --font-timer: var(--font-manrope-next), Arial, Helvetica, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
